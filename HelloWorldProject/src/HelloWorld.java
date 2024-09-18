@@ -29,12 +29,26 @@ public class HelloWorld {
 
 		if(option == 2){
 			System.out.println("What is the binary number?");
-			int BiNum = input.nextInt();
+			string biNum = input.nextLine();
 		}//end if
 
+			BinaryToDeci(biNum);
 		//next step is to make 2 classes for binary and decimal
 		//after *return* the number
-		
-	}//end main
 
-}//end class
+		public static void BinaryToDeci(string num){
+			int ans = 0;
+			int pow = 0;
+			for(int i = num.length(); i >= 0; i--){
+				if(num.charAt(i) == "1")
+					ans += Math.pow(2,p);
+				p++;
+			}//end for loop
+			System.out.println("Decimal equivialent of " + num + " is " + ans);
+		}//end method
+		
+		public static int DeciToBinary(int num){
+			
+		}//end method
+	}//end main
+}//end class}
