@@ -25,11 +25,15 @@ public class HelloWorld {
 		if(option == 1){
 			System.out.println("What is the decimal number?");
 			int deciNum = input.nextInt();
+
 		}//end if
 
 		if(option == 2){
 			System.out.println("What is the binary number?");
-			String biNum = input.nextLine();
+			//input.nextLine();
+			int binary = input.nextInt();
+			int decimalNum = binaryToDeci(binary);
+			System.out.println("Decimal equivialent of " + binary + " is " + decimalNum);
 		}//end if
 
 			//BinaryToDeci(biNum);
@@ -37,20 +41,22 @@ public class HelloWorld {
 		//after *return* the number
 
 		//public int DeciToBinary(int num){
-		
-		//BinaryToDeci(biNum);
 
 		//}//end method
 	}//end main
 
-	public static String BinaryToDeci(String num){
+	 public static int binaryToDeci(int num){
 		int ans = 0;
-		int pow = 0;
-		for(int i = num.length(); i >= 0; i--){
-			if(num.charAt(i) == "1")
-				ans += Math.pow(2,pow);
-			pow++;
-		}//end for loop
-		System.out.println("Decimal equivialent of " + num + " is " + ans);
+		int i = 0;
+		int remain = 0;
+
+		while(num !=0){
+			remain = num % 10;
+			num /= 10;
+			ans += remain * Math.pow(2,i);
+			i++;
+		}//end while loop
+		return ans;
 	}//end method
+
 }//end class}
